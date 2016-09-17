@@ -1,5 +1,8 @@
 <h1>Tweet 一覧</h1>
 <p><%= notice %></p>
+<%= link_to '新規投稿', new_tweet_path %><br>
 <% @tweet.each do |tweet| %>
     <%= tweet.content %>
+    <%= link_to '編集', edit_tweet_path(tweet.id) %>
+    <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %><br>
 <% end %>

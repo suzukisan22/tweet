@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resource :tweets, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :tweets, only: [:index, :new, :create, :edit, :update ,:destroy] do
     collection do
       post :confirm
     end
   end
   
-  root 'tweets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
