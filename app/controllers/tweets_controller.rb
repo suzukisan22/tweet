@@ -8,12 +8,17 @@ class TweetsController < ApplicationController
     @tweet = Exam01.new
   end
   
+  def confirm
+    @tweet = Exam01.new(tweet_params)
+    render :new if @tweet.invalid?
+  end
+  
   def create
     @tweet = Exam01.new(tweet_params)
     if @tweet.save
       redirect_to tweets_path, notice: 'tweetを投稿しました'
     else 
-      render :new, notice: 'ツイートに失敗しました'
+      render :new
     end
   end
   
