@@ -3,6 +3,11 @@ class TweetsController < ApplicationController
   
   def index
     @tweet = Exam01.order(created_at: :desc)
+    if @tweet.updated_at.blank?
+      @time = @tweet.created_at
+    else
+      @time = @tweet.updated_at
+    end
   end
   
   def new
