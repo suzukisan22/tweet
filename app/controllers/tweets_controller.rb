@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:edit, :update, :destroy]
   
   def index
     @tweet = Exam01.all
@@ -27,17 +28,14 @@ class TweetsController < ApplicationController
   end
   
   def edit
-    @tweet = Exam01.find(params[:id])
   end
   
   def update
-    @tweet = Exam01.find(params[:id])
     @tweet.update(tweet_params)
     redirect_to tweets_path, notice: 'ツイートを更新しました'
   end
   
   def destroy
-    @tweet = Exam01.find(params[:id])
     @tweet.destroy
     redirect_to tweets_path, notice: 'ツイートを削除しました'
   end
@@ -45,5 +43,9 @@ class TweetsController < ApplicationController
   private
     def tweet_params
       params.require(:exam01).permit(:content)
+    end
+    
+    def set_tweet
+      @tweet = Exam01.find(params[:id])
     end
 end
