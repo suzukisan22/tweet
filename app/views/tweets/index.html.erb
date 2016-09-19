@@ -14,8 +14,7 @@
                     <%= fa_icon 'smile-o', class: 'fa-2x' %>
                 </div>
                 <div class="col-xs-10">
-                    <h3 class="tweet mb20"><%= @time %></h3>
-                    <h3 class="mb20"><%= tweet.content %></h3>
+                    <h3 class="tweet mb20"><%= tweet.content %></h3>
                     <%= link_to edit_tweet_path(tweet.id), class: 'mr25' do %>
                         <%= fa_icon 'pencil', class: 'fa-2x' %>
                     <% end %>
