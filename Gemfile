@@ -49,4 +49,5 @@ group :development, :test do
   gem 'pry-byebug'
 end
 gem "font-awesome-rails"
+gem 'rails_12factor', group: :production
 
