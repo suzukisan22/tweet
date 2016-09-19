@@ -1,17 +1,2 @@
 <h1>新規投稿</h1>
-<%= form_for(@tweet, url: tweets_path) do |f| %>
-    <% if @tweet.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
-
-    <ul>
-    <% @tweet.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-    <%= f.submit 'ツイート' %>
-<% end %>
+<%= render 'form' %>

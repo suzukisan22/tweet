@@ -1,6 +1,2 @@
 <h1>投稿を編集する</h1>
-<%= form_for(@tweet, url: tweet_path) do |f| %>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-    <%= f.submit 'ツイート' %>
-<% end %>
+<%= render 'form' %>

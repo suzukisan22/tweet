@@ -5,7 +5,11 @@ class TweetsController < ApplicationController
   end
   
   def new
-    @tweet = Exam01.new
+    if params[:back]
+      @tweet = Exam01.new(tweet_params)
+    else
+      @tweet = Exam01.new
+    end
   end
   
   def confirm
