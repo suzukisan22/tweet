@@ -1,8 +1,29 @@
-<h1>Tweet 一覧</h1>
-<p><%= notice %></p>
-<%= link_to '新規投稿', new_tweet_path %><br>
-<% @tweet.each do |tweet| %>
-    <%= tweet.content %>
-    <%= link_to '編集', edit_tweet_path(tweet.id) %>
-    <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %><br>
+<% unless notice.blank? %>
+    <div class="alert alert-success mt25">
+        <h5><%= notice %></h5>
+    </div>
 <% end %>
+<div class="panel panel-default m25">
+    <div class="panel-heading no_border">ツイート
+        <h5 id="tw_number"><%= @tweet.count %></h5>
+    </div>
+    <div>           
+        <% @tweet.each do |tweet| %>
+            <div class="clearfix tweet_content">
+                <div class="col-xs-2">
+                    <%= fa_icon 'smile-o', class: 'fa-2x' %>
+                </div>
+                <div class="col-xs-10">
+                    <h3 class="tweet mb20"><%= tweet.content %></h3>
+                    <%= link_to edit_tweet_path(tweet.id), class: 'mr25' do %>
+                        <%= fa_icon 'pencil', class: 'fa-2x' %>
+                    <% end %>
+                    <%= link_to tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'} do %>
+                        <%= fa_icon 'trash', class: 'fa-2x' %>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+

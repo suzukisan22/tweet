@@ -1,8 +1,7 @@
+<div class="m25">
 <%= form_for(@tweet, url: choose_new_or_edit) do |f| %>
     <% if @tweet.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
-
+  <div id="error_explanation" class="alert alert-danger">
     <ul>
     <% @tweet.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -10,8 +9,9 @@
     </ul>
   </div>
 <% end %>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-    <%= f.submit 'ツイート' %>
+    <%= f.text_area :content, :placeholder => 'いまどうしてる' , class: 'form-control' %>
+    <div id="btn_tweet" class="clearfix">
+      <%= f.submit 'ツイート' , class: 'btn btn-primary pull-right' %>
+    </div>
 <% end %>
-<%= link_to 'ツイート一覧に戻る', tweets_path %>
+</div>

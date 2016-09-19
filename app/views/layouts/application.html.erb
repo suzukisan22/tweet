@@ -7,8 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+      <div class="row">
+        <div class="col-xs-4">
+          <%= link_to root_path do %>
+            <%= fa_icon "home" , class: 'fa-2x' %>
+          <% end %>
+        </div>
+        <div class="col-xs-4 text-center">
+          <%= link_to root_path do %>
+            <%= fa_icon "twitter" , class: 'fa-2x'%>
+          <% end %>
+        </div>
+        <div class="col-xs-4 text-right">
+          <%= link_to new_tweet_path do %>
+            <%= fa_icon 'pencil-square-o' , class: 'fa-2x'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

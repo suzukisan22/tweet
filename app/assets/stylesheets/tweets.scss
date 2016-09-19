@@ -1,3 +1,61 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* all */
+
+.m25 {
+    margin: 25px 0;
+}
+
+header {
+    font-size: 1.5em;
+}
+
+/* index*/
+
+#tw_number {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.tweet_content {
+    border-top: 2px solid #eee;
+    padding: 15px 0;
+}
+
+.no_border {
+    border: none;
+}
+
+.tweet {
+    margin: 0 auto;
+    word-wrap: break-word;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mr25 {
+    margin-right: 25px;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+/* new */
+
+#btn_tweet {
+    margin: 25px 0;
+}
+
+#error_explanation {
+    padding: 0 15px 15px
+}
+
+.mt80 {
+    margin-top: 80px;
+}
+
