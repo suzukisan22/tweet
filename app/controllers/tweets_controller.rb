@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :update, :destroy]
   
   def index
-    @tweet = Exam01.order(created_at: :desc)
+    @tweet = Exam01.order(updated_at: :desc)
   end
   
   def new
