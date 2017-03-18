@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :tweets, only: [:new, :create, :edit, :update ,:destroy] do
     collection do
       post :confirm
