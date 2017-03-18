@@ -44,10 +44,9 @@ group :development, :test do
 end
 gem 'twitter-bootstrap-rails'
 group :development, :test do
-  gem 'pry-rails'  
+  gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
 end
 gem "font-awesome-rails"
 gem 'rails_12factor', group: :production
-
