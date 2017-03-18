@@ -50,3 +50,5 @@ group :development, :test do
 end
 gem "font-awesome-rails"
 gem 'rails_12factor', group: :production
+
+gem 'sorcery', '~> 0.9.1'
