@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'user_sessions/new'
+
+  get 'user_sessions/create'
+
+  get 'user_sessions/destroy'
+
   resources :users
   resources :tweets, only: [:new, :create, :edit, :update ,:destroy] do
     collection do
